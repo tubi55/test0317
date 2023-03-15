@@ -1,9 +1,18 @@
 import Link from 'next/link';
 import { FaBell, FaSearch } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 function Header() {
+	const [Scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => (window.scrollY > 0 ? setScrolled(true) : setScrolled(false));
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
-		<header>
+		<header className={`${Scrolled && 'bg-red-500'}`}>
 			{/* logo ,menu 그룹 */}
 			<div className='flex items-center space-x-2 md:space-x-10'>
 				<h1>
