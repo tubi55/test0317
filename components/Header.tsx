@@ -1,15 +1,19 @@
 function Header() {
 	return (
 		<header>
-			<h1>DCODELAB</h1>
+			<div>
+				<h1>
+					<img src='https://rb.gy/ulxxee' alt='netflix' width={100} className='cursor-pointer' />
+				</h1>
 
-			<ul className='bg-[aqua]'>
-				<li>menu</li>
-				<li>menu</li>
-				<li>menu</li>
-				<li>menu</li>
-				<li>menu</li>
-			</ul>
+				<ul className='space-x-4 md:flex'>
+					<li className='headerLink'>Home</li>
+					<li className='headerLink'>TV Shows</li>
+					<li className='headerLink'>Movies</li>
+					<li className='headerLink'>New & Popular</li>
+					<li className='headerLink'>My List</li>
+				</ul>
+			</div>
 		</header>
 	);
 }
