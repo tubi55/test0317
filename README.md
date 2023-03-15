@@ -1,27 +1,91 @@
-# Next.js + Tailwind CSS Example
+## Next.js 세팅
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+### Next.js + tailwindcss (feat.typescript)
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+npx create-next-app --example with-tailwindcss next-ts-ex
 ```
+
+### 실행 명령어
 
 ```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+npm run dev
 ```
+
+### tailwindcss 확장기능 설치
+
+tailwind css intellisence
+
+### 넓이값 단위 계산
+
+[넓이값 단위계산](https://tailwindcss.com/docs/width)
+
+### 미디어쿼리 단위
+
+[미디어쿼리 단위](https://tailwindcss.com/docs/screens)
+
+---
+
+### react-icons 가이드 문서
+
+[react-icons](https://react-icons.github.io/react-icons)
 
 ```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+npm i react-icons --save
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### tmdb 영화 장르 코드 번호
+
+[영상 코드 번호](https://developers.themoviedb.org/3/genres/get-movie-list)
+
+```
+MOVIE
+Action          28
+Adventure       12
+Animation       16
+Comedy          35
+Crime           80
+Documentary     99
+Drama           18
+Family          10751
+Fantasy         14
+History         36
+Horror          27
+Music           10402
+Mystery         9648
+Romance         10749
+Science Fiction 878
+TV Movie        10770
+Thriller        53
+War             10752
+Western         37
+---------------------
+TV SHOW
+Action & Adventure  10759
+Animation           16
+Comedy              35
+Crime               80
+Documentary         99
+Drama               18
+Family              10751
+Kids                10762
+Mystery             9648
+News                10763
+Reality             10764
+Sci-Fi & Fantasy    10765
+Soap                10766
+Talk                10767
+War & Politics      10768
+Western             37
+```
+
+### 스크롤바 디자인 변경
+
+```
+npm i tailwind-scrollbar
+npm i tailwind-scrollbar-hide
+```
+
+###tmdb 이미지 사이즈 정보
+
+[tmdb 이미지 사이즈 코드 확인](https://www.themoviedb.org/talk/53c11d4ec3a3684cf4006400)

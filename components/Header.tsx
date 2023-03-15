@@ -3,7 +3,7 @@ function Header() {
 		<header>
 			<h1>DCODELAB</h1>
 
-			<ul>
+			<ul className='bg-[aqua]'>
 				<li>menu</li>
 				<li>menu</li>
 				<li>menu</li>
