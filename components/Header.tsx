@@ -5,12 +5,12 @@ function Header() {
 	return (
 		<header>
 			{/* logo ,menu 그룹 */}
-			<div>
+			<div className='flex items-center space-x-2 md:space-x-10'>
 				<h1>
 					<img src='https://rb.gy/ulxxee' alt='netflix' width={100} className='cursor-pointer' />
 				</h1>
 
-				<ul className='space-x-4 md:flex'>
+				<ul className='space-x-4 hidden md:flex'>
 					<li className='headerLink'>Home</li>
 					<li className='headerLink'>TV Shows</li>
 					<li className='headerLink'>Movies</li>
@@ -20,10 +20,10 @@ function Header() {
 			</div>
 
 			{/* 유틸메뉴 그룹 */}
-			<div>
-				<FaSearch />
-				<p>Kids</p>
-				<FaSearch />
+			<div className='flex items-center space-x-4 text-sm font-light'>
+				<FaSearch className='w-6' />
+				<p className='hidden lg:inline'>Kids</p>
+				<FaBell className='w-6' />
 				<Link href='/'>
 					<img src='https://rb.gy/g1pwyx' alt='profile' className='rounded' />
 				</Link>
