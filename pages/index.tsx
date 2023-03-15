@@ -2,11 +2,11 @@ import Header from '@/components/Header';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import requests from '@/utils/requests';
-import { Movie } from '@/typings';
+import { Movie, TV } from '@/typings';
 import Banner from '@/components/Banner';
 
 interface IndexProps {
-	original: Movie[];
+	original: TV[];
 	topRated: Movie[];
 	sf: Movie[];
 	drama: Movie[];
