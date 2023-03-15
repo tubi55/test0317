@@ -5,6 +5,7 @@ import requests from '@/utils/requests';
 import { Movie } from '@/typings';
 
 interface IndexProps {
+	original: Movie[];
 	topRated: Movie[];
 	sf: Movie[];
 	drama: Movie[];
@@ -13,8 +14,8 @@ interface IndexProps {
 	animation: Movie[];
 }
 
-const Home: NextPage<IndexProps> = ({ topRated, sf, drama, fantasy, thriller, animation }: IndexProps) => {
-	console.log(sf);
+const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, thriller, animation }: IndexProps) => {
+	console.log(original);
 
 	return (
 		<div className='relative h-screen bg-gradient-to-b from-[#333] to-[#141414]'>
@@ -33,9 +34,9 @@ const Home: NextPage<IndexProps> = ({ topRated, sf, drama, fantasy, thriller, an
 };
 
 export default Home;
-
 export const getServerSideProps = async () => {
-	const [top, sf, drama, fantasy, thriller, animation] = await Promise.all([
+	const [original, top, sf, drama, fantasy, thriller, animation] = await Promise.all([
+		fetch(requests.original).then((res) => res.json()),
 		fetch(requests.top).then((res) => res.json()),
 		fetch(requests.sf).then((res) => res.json()),
 		fetch(requests.drama).then((res) => res.json()),
@@ -46,6 +47,7 @@ export const getServerSideProps = async () => {
 
 	return {
 		props: {
+			original: original.results,
 			topRated: top.results,
 			sf: sf.results,
 			drama: drama.results,

@@ -21,14 +21,3 @@ export interface Movie {
 	popularity: number;
 	poster_path: string;
 }
-
-console.log(Movie);
-
-export interface IndexProps {
-	topRated: Movie[];
-	sf: Movie[];
-	drama: Movie[];
-	fantasy: Movie[];
-	thriller: Movie[];
-	animation: Movie[];
-}
