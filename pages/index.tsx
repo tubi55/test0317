@@ -25,13 +25,14 @@ const Home: NextPage = (props) => {
 export default Home;
 
 export const getServerSideProps = async () => {
-	const [top, sf, drama, fantasy, thriller, animation] = await Promise.all([
+	const [top, sf, drama, fantasy, thriller, animation, anime] = await Promise.all([
 		fetch(requests.top).then((res) => res.json()),
 		fetch(requests.sf).then((res) => res.json()),
 		fetch(requests.drama).then((res) => res.json()),
 		fetch(requests.fantasy).then((res) => res.json()),
 		fetch(requests.thriller).then((res) => res.json()),
 		fetch(requests.animation).then((res) => res.json()),
+		fetch(requests.anime).then((res) => res.json()),
 	]);
 
 	return {
@@ -42,6 +43,7 @@ export const getServerSideProps = async () => {
 			fantasy: fantasy.results,
 			thriller: thriller.results,
 			animation: animation.results,
+			anime: anime.results,
 		},
 	};
 };
