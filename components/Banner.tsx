@@ -2,6 +2,7 @@ import { TV } from '@/typings';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { baseURL } from '@/constants/movie';
+import { FaInfoCircle, FaPlay } from 'react-icons/fa';
 
 interface Props {
 	original: TV[];
@@ -22,9 +23,23 @@ function Banner({ original }: Props) {
 	console.log(TV);
 
 	return (
-		<section>
-			<div>
+		<section className='flex flex-col space-y-2 py-16 pt-[40vh] pl-[3vw] md:space-y-4 lg:h[65vh] lg:justify-end lg:pb-12'>
+			<div className='absolute top-0 left-0 z-[1] h-[95vh] w-full'>
 				<Image src={`${baseURL}${TV?.backdrop_path}`} alt={`${TV?.name}`} fill priority quality={50} className='object-cover' />
+			</div>
+
+			<h1 className='relative z-[3] text-2xl font-bold drop-shadow md:text-4xl lg:text-7xl'>{TV?.name}</h1>
+			<p className='relative z-[3] text-xs max-w-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>{TV?.overview}</p>
+
+			<div className='relative flex space-x-3 z-[3]'>
+				<button className='bannerButton bg-white text-black'>
+					<FaPlay /> Play
+				</button>
+
+				<button className='bannerButton bg-[gray]/70 text-white'>
+					More Info
+					<FaInfoCircle />
+				</button>
 			</div>
 		</section>
 	);
