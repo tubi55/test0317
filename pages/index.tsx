@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import requests from '@/utils/requests';
 import { Movie } from '@/typings';
+import Banner from '@/components/Banner';
 
 interface IndexProps {
 	original: Movie[];
@@ -15,8 +16,6 @@ interface IndexProps {
 }
 
 const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, thriller, animation }: IndexProps) => {
-	console.log(original);
-
 	return (
 		<div className='relative h-screen bg-gradient-to-b from-[#333] to-[#141414]'>
 			<Head>
@@ -27,6 +26,7 @@ const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, th
 			<Header />
 
 			<main className=''>
+				<Banner original={original} />
 				<section></section>
 			</main>
 		</div>
