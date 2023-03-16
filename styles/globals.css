@@ -4,7 +4,7 @@
 
 @layer base {
 	body {
-		@apply bg-[#141414] text-white h-[150vh];
+		@apply bg-[#141414] text-white h-[150vh] scrollbar-thin scrollbar-track-[transparent] scrollbar-thumb-[red];
 	}
 
 	header {
