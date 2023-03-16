@@ -6,6 +6,6 @@ module.exports = {
 	},
 	plugins: [require('tailwind-scrollbar'), require('tailwind-scrollbar-hide')],
 	variants: {
-		scrollba: ['rounded'],
+		scrollbar: ['rounded'],
 	},
 };
