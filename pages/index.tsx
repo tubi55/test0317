@@ -26,7 +26,7 @@ const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, th
 
 			<Header />
 
-			<main className='relative pl-4 pb-24 lg:space-y-24 lg:pl-16'>
+			<main className='relative pl-4 pb-24 lg:space-y-18 lg:pl-16'>
 				<Banner original={original} />
 
 				<section>

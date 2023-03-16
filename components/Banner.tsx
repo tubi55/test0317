@@ -35,6 +35,7 @@ function Banner({ original }: Props) {
 					sizes='100vw'
 					className='object-cover'
 				/>
+				<div className='absolute top-0 left-0 z-[5] w-[100vw] h-[100%] bg-gradient1'></div>
 			</div>
 
 			<h1 className='relative z-[3] text-2xl font-bold drop-shadow md:text-4xl lg:text-7xl'>{TV?.name}</h1>
