@@ -10,7 +10,17 @@ function Thumbnail({ movie }: Props) {
 	console.log(`${baseURL}`);
 	return (
 		<div className='relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:min-w-[260px] md:hover:scale-[1.1]'>
-			<Image src={`${baseURL}w300${movie.backdrop_path}`} fill priority alt={movie.title} className='rounded-sm object-cover md:rounded' />
+			<Image
+				src={`${baseURL}original${movie?.backdrop_path}`}
+				fill
+				placeholder='blur'
+				blurDataURL={`${baseURL}original${movie?.backdrop_path}`}
+				alt={movie?.title}
+				sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 100vw,
+              100vw'
+				className='rounded-sm object-cover md:rounded'
+			/>
 		</div>
 	);
 }
