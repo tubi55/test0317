@@ -13,12 +13,10 @@ function Thumbnail({ movie }: Props) {
 			<Image
 				src={`${baseURL}original${movie?.backdrop_path}`}
 				fill
-				placeholder='blur'
-				blurDataURL={`${baseURL}original${movie?.backdrop_path}`}
+				//placeholder='blur'
+				//blurDataURL={`${baseURL}original${movie?.backdrop_path}`}
 				alt={movie?.title}
-				sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 100vw,
-              100vw'
+				sizes='20vw'
 				className='rounded-sm object-cover md:rounded'
 			/>
 		</div>

@@ -28,13 +28,11 @@ function Banner({ original }: Props) {
 				<Image
 					src={`${baseURL}original${TV?.backdrop_path}`}
 					alt={`${TV?.name}`}
+					priority
 					fill
-					placeholder='blur'
-					blurDataURL={`${baseURL}original${TV?.backdrop_path}`}
-					quality={100}
-					sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              40vw'
+					//placeholder='blur'
+					//blurDataURL='data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=='
+					sizes='100vw'
 					className='object-cover'
 				/>
 			</div>
