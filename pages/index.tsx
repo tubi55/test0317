@@ -31,6 +31,11 @@ const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, th
 
 				<section>
 					<Row title='Top Rated' movies={topRated} />
+					<Row title='Science Fiction' movies={sf} />
+					<Row title='Drama' movies={drama} />
+					<Row title='Fantasy' movies={fantasy} />
+					<Row title='Thriller' movies={thriller} />
+					<Row title='Animation' movies={animation} />
 				</section>
 			</main>
 		</div>

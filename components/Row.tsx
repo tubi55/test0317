@@ -21,7 +21,7 @@ function Row({ title, movies }: Props) {
 	};
 
 	return (
-		<article className='h-40 space-y-0.5 md:space-y-2 relative z-[4]'>
+		<article className='h-40 space-y-0.5 mb-[40px] md:space-y-2 relative z-[4]'>
 			{/* title */}
 			<h2 className='w-50 text-base font-semibold text-[#e5e5e5] transition duration-[0.3] hover:text-white md:text-2xl'>{title}</h2>
 
