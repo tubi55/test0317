@@ -25,7 +25,7 @@ function Banner({ original }: Props) {
 	return (
 		<section className='flex flex-col space-y-2 py-16 pt-[40vh] md:space-y-4 lg:h[65vh] lg:justify-end lg:pb-12'>
 			<div className='absolute top-0 left-0 z-[1] h-[95vh] w-full'>
-				<Image src={`${baseURL}${TV?.backdrop_path}`} alt={`${TV?.name}`} fill priority quality={50} className='object-cover' />
+				<Image src={`${baseURL}original${TV?.backdrop_path}`} alt={`${TV?.name}`} fill priority quality={50} className='object-cover' />
 			</div>
 
 			<h1 className='relative z-[3] text-2xl font-bold drop-shadow md:text-4xl lg:text-7xl'>{TV?.name}</h1>
