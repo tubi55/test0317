@@ -4,6 +4,7 @@ import Head from 'next/head';
 import requests from '@/utils/requests';
 import { Movie, TV } from '@/typings';
 import Banner from '@/components/Banner';
+import Row from '@/components/Row';
 
 interface IndexProps {
 	original: TV[];
@@ -25,9 +26,12 @@ const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, th
 
 			<Header />
 
-			<main className=''>
+			<main className='relative pl-4 pb-24 lg:space-y-24 lg:pl-16'>
 				<Banner original={original} />
-				<section></section>
+
+				<section>
+					<Row title='Top Rated' movies={topRated} />
+				</section>
 			</main>
 		</div>
 	);
