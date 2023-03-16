@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import useAuth from '@/hooks/useAuth';
 
 interface Inputs {
 	email: string;
@@ -8,6 +9,7 @@ interface Inputs {
 }
 
 function login() {
+	const { signIn, signUp } = useAuth();
 	const [Login, setLogin] = useState(false);
 	const {
 		register, //원하는 인풋요소에 전개연산자로 등록해서 값을 관리
@@ -21,10 +23,10 @@ function login() {
 		console.log('password', password);
 		if (Login) {
 			//만약 클릭한게 로그인 버튼이면 firebase에 로그인처리를 하는 함수 호출
-			//await signIn(email, password)
+			await signIn(email, password);
 		} else {
 			//클릭한게 로그인 버튼이 아니면(회원가입 버튼이면) 로그인이 아닌 회원정보 등록함수 호출
-			//await signUp(email, password);
+			await signUp(email, password);
 		}
 	};
 
