@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { baseURL } from '@/constants/movie';
 import { FaInfoCircle, FaPlay } from 'react-icons/fa';
-import { modalState } from '@/atoms/globalAtom';
+import { modalState, movieState } from '@/atoms/globalAtom';
 import { useRecoilState } from 'recoil';
 
 interface Props {
@@ -14,6 +14,7 @@ function Banner({ original }: Props) {
 	const ref = useRef<any>(null);
 	const [TV, setTV] = useState<TV | null>(null);
 	const [ShowModal, setShowModal] = useRecoilState(modalState);
+	const [CurrentTV, setCurrentTV] = useRecoilState<any>(movieState);
 
 	useEffect(() => {
 		//0~20사이의 랜덤 정수값을 반환하는 공식
@@ -57,7 +58,13 @@ function Banner({ original }: Props) {
 					<FaPlay /> Play
 				</button>
 
-				<button className='bannerButton bg-[gray]/70 text-white' onClick={() => setShowModal(true)}>
+				<button
+					className='bannerButton bg-[gray]/70 text-white'
+					onClick={() => {
+						setShowModal(true);
+						setCurrentTV(TV);
+					}}
+				>
 					More Info
 					<FaInfoCircle />
 				</button>

@@ -23,7 +23,6 @@ interface IndexProps {
 const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, thriller, animation }: IndexProps) => {
 	const showModal = useRecoilValue(modalState);
 	const { user } = useAuth();
-	console.log(user);
 	return (
 		<div className='relative h-screen bg-gradient-to-b from-[#333] to-[#141414]'>
 			<Head>
