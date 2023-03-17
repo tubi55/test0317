@@ -5,6 +5,7 @@ import requests from '@/utils/requests';
 import { Movie, TV } from '@/typings';
 import Banner from '@/components/Banner';
 import Row from '@/components/Row';
+import useAuth from '@/hooks/useAuth';
 
 interface IndexProps {
 	original: TV[];
@@ -17,6 +18,8 @@ interface IndexProps {
 }
 
 const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, thriller, animation }: IndexProps) => {
+	const { user } = useAuth();
+	console.log(user);
 	return (
 		<div className='relative h-screen bg-gradient-to-b from-[#333] to-[#141414]'>
 			<Head>

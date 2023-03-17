@@ -10,7 +10,8 @@ interface Inputs {
 
 function login() {
 	const { signIn, signUp } = useAuth();
-	const [Login, setLogin] = useState(false);
+	const [Login, setLogin] = useState(true);
+
 	const {
 		register, //원하는 인풋요소에 전개연산자로 등록해서 값을 관리
 		handleSubmit, //해당훅 전용 전송 이벤트 핸들러
@@ -19,8 +20,6 @@ function login() {
 
 	//전송 이벤트 발생시 handleSubmit함수로 실행할 콜백함수 등록
 	const join: SubmitHandler<Inputs> = async ({ email, password }) => {
-		console.log('email', email);
-		console.log('password', password);
 		if (Login) {
 			//만약 클릭한게 로그인 버튼이면 firebase에 로그인처리를 하는 함수 호출
 			await signIn(email, password);

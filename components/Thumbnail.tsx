@@ -7,7 +7,6 @@ interface Props {
 }
 
 function Thumbnail({ movie }: Props) {
-	console.log(`${baseURL}`);
 	return (
 		<div className='relative h-28 min-w-[180px] cursor-pointer transition duration-200 ease-out md:min-w-[260px] md:hover:scale-[1.1]'>
 			<Image
