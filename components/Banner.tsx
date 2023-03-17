@@ -1,4 +1,4 @@
-import { TV } from '@/typings';
+import { Movie } from '@/typings';
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { baseURL } from '@/constants/movie';
@@ -7,13 +7,13 @@ import { modalState, movieState } from '@/atoms/globalAtom';
 import { useRecoilState } from 'recoil';
 
 interface Props {
-	original: TV[];
+	original: Movie[];
 }
 
 function Banner({ original }: Props) {
 	const ref = useRef<any>(null);
-	const [TV, setTV] = useState<TV | null>(null);
-	const [ShowModal, setShowModal] = useRecoilState(modalState);
+	const [TV, setTV] = useState<Movie | null>(null);
+	const [ShowModal, setShowModal] = useRecoilState<boolean>(modalState);
 	const [CurrentTV, setCurrentTV] = useRecoilState<any>(movieState);
 
 	useEffect(() => {

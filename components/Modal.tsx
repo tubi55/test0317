@@ -13,12 +13,12 @@ function Modal() {
 			<article className='w-[600px] h-[100%]'>
 				{/* pic box */}
 				<div className='relative w-full h-[60%]'>
-					<Image src={`${baseURL}w780${Movie?.poster_path}`} fill className='object-contain' alt={`${Movie?.name}`} />
+					<Image src={`${baseURL}w780${Movie?.poster_path}`} fill className='object-contain' alt={`${Movie?.name || Movie?.title}`} />
 				</div>
 
 				{/* txt box */}
 				<div>
-					<h2>{Movie?.name}</h2>
+					<h2>{Movie?.name || Movie?.title}</h2>
 					<p>{Movie?.overview}</p>
 				</div>
 			</article>
