@@ -6,6 +6,9 @@ import { Movie, TV } from '@/typings';
 import Banner from '@/components/Banner';
 import Row from '@/components/Row';
 import useAuth from '@/hooks/useAuth';
+import Modal from '@/components/Modal';
+import { modalState } from '@/atoms/globalAtom';
+import { useRecoilValue } from 'recoil';
 
 interface IndexProps {
 	original: TV[];
@@ -18,6 +21,7 @@ interface IndexProps {
 }
 
 const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, thriller, animation }: IndexProps) => {
+	const showModal = useRecoilValue(modalState);
 	const { user } = useAuth();
 	console.log(user);
 	return (
@@ -41,6 +45,8 @@ const Home: NextPage<IndexProps> = ({ original, topRated, sf, drama, fantasy, th
 					<Row title='Animation' movies={animation} />
 				</section>
 			</main>
+
+			{showModal && <Modal />}
 		</div>
 	);
 };
