@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import requests from '@/utils/requests';
-import { Movie, TV } from '@/typings';
+import { Movie } from '@/typings';
 import Banner from '@/components/Banner';
 import Row from '@/components/Row';
 import useAuth from '@/hooks/useAuth';
@@ -11,7 +11,7 @@ import { modalState } from '@/atoms/globalAtom';
 import { useRecoilValue } from 'recoil';
 
 interface IndexProps {
-	original: TV[];
+	original: Movie[];
 	topRated: Movie[];
 	sf: Movie[];
 	drama: Movie[];
